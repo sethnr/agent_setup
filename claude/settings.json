@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+
+  "permissions": {
+    "defaultMode": "default",
+
+    "allow": [
+      "WebFetch",
+      "WebSearch",
+      "Bash(curl -I *)",
+      "Bash(curl -s http://127.0.0.1*)",
+      "Bash(curl -s http://localhost*)"
+	
+      "Bash(python -m webbrowser *)",
+
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(rg *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(find *)",
+
+      "Bash(python3 frontend/server.py*)",
+      "Bash(python3 wiki/scrape_iddo_wiki.py*)"
+    ],
+
+    "ask": [
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(git pull*)",
+      "Bash(git reset*)",
+      "Bash(git clean*)",
+
+      "Bash(gh *)",
+
+      "Bash(rm -rf*)",
+      "Bash(rmdir *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(tee *)"
+    ],
+
+    "deny": [
+      "Bash(mail *)",
+      "Bash(sendmail *)",
+      "Bash(mutt *)",
+      "Bash(msmtp *)",
+
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)"
+    ]
+  },
+
+  "sandbox": {
+    "enabled": true,
+    "failIfUnavailable": true,
+    "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
+
+    "filesystem": {
+      "denyWrite": [
+        "~/",
+        "/etc",
+        "/usr",
+        "/bin",
+        "/sbin",
+        "/opt",
+        "/Applications"
+      ],
+      "allowWrite": []
+    },
+
+    "network": {
+      "allowLocalBinding": true,
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "docs.github.com",
+        "pypi.org",
+        "*.python.org",
+        "registry.npmjs.org",
+        "huggingface.co",
+        "*.huggingface.co",
+        "anthropic.com",
+        "*.anthropic.com"
+      ],
+      "deniedDomains": []
+    }
+  },
+
+  "enabledPlugins": {
+    "browser-use@openai-bundled": true,
+    "documents@openai-primary-runtime": true,
+    "spreadsheets@openai-primary-runtime": true,
+    "presentations@openai-primary-runtime": true,
+    "hugging-face@openai-curated": true,
+    "build-web-apps@openai-curated": true,
+    "github@openai-curated": true,
+
+    "teams@openai-curated": false,
+    "outlook-email@openai-curated": false,
+    "outlook-calendar@openai-curated": false,
+    "cloudflare@openai-curated": false
+  }
+}

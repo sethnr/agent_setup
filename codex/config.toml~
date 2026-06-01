@@ -1,0 +1,80 @@
+# ~/.codex/config.toml
+
+########
+# GENERAL COMMAND PERMISSIONS
+########
+
+[sandbox_workspace_write]
+network_access = true
+
+# Do NOT add broad writable_roots unless you really mean it.
+# writable_roots = []
+
+personality = "pragmatic"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+########
+# PROJECT LEVEL PERMISSIONS
+########
+
+[projects."/Users/seth/Gits/IDDO_context_engine"]
+trust_level = "trusted"
+
+[projects."/Users/seth/Gits/IDDO_sdtm_llm"]
+trust_level = "trusted"
+
+[projects."/Users/seth/Documents/Codex/2026-05-20/i-don-t-seem-to-be"]
+trust_level = "trusted"
+
+
+########
+# PLUGINS
+########
+
+# Low-risk local/search/build tooling
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."hugging-face@openai-curated"]
+enabled = true
+
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
+# Optional: enable only if you want Codex reading GitHub context
+[plugins."github@openai-curated"]
+enabled = true
+
+# Disable external comms / infra by default
+[plugins."teams@openai-curated"]
+enabled = false
+
+[plugins."outlook-email@openai-curated"]
+enabled = false
+
+[plugins."outlook-calendar@openai-curated"]
+enabled = false
+
+[plugins."cloudflare@openai-curated"]
+enabled = false
+
+# Marketplace metadata; leave as managed by Codex
+[marketplaces.openai-bundled]
+last_updated = "2026-05-20T09:37:21Z"
+source_type = "local"
+source = "/Users/seth/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-20T09:43:21Z"
+source_type = "local"
+source = "/Users/seth/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"

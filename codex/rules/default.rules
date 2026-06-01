@@ -1,0 +1,70 @@
+########
+# ROUTINE READ / INSPECT / LOOKUP ACTIONS
+########
+
+# Allow routine read-only inspection and web/documentation lookup.
+ALLOW = [
+    # Web / browser lookup
+    ["curl"],
+    ["open"],
+    ["python", "-m", "webbrowser"],
+
+    # Local inspection
+    ["git", "status"],
+    ["git", "diff"],
+    ["git", "log"],
+    ["rg"],
+    ["ls"],
+    ["cat"],
+    ["find"],
+
+    # Existing local dev conveniences
+    ["python3", "frontend/server.py"],
+    ["python3", "wiki/scrape_iddo_wiki.py"],
+]
+
+
+########
+# ACTIONS REQUIRING CONFIRMATION
+########
+
+# Prompt before actions that may change files, git state, remotes, or GitHub state.
+# nb: gh -> GitHub CLI
+PROMPT = [
+    ["git", "commit"],
+    ["git", "push"],
+    ["git", "pull"],
+    ["git", "reset"],
+    ["git", "clean"],
+
+    ["gh"],
+
+    ["rm", "-rf"],
+    ["rmdir"],
+    ["mv"],
+    ["cp"],
+    ["tee"],
+]
+
+
+########
+# FORBIDDEN EXTERNAL COMMUNICATIONS
+########
+
+# Forbid external communications from the agent.
+FORBID = [
+    ["mail"],
+    ["sendmail"],
+    ["mutt"],
+    ["msmtp"],
+]
+
+
+for pattern in ALLOW:
+    prefix_rule(pattern=pattern, decision="allow")
+
+for pattern in PROMPT:
+    prefix_rule(pattern=pattern, decision="prompt")
+
+for pattern in FORBID:
+    prefix_rule(pattern=pattern, decision="forbidden")
