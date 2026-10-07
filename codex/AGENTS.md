@@ -12,6 +12,13 @@
 - Do not create, modify, delete, or move files outside the workspace unless I explicitly authorise that specific action.
 - Do not change global system configuration, shell profiles, credential stores, package-manager global config, browser profiles, or files under home directories unless explicitly authorised.
 
+## Tool routing and computer control
+
+- When an installed plugin covers the task, use it by default. If it requires authorisation, ask the user to reconnect or approve it; do not substitute Chrome or desktop automation without explicit permission.
+- Do not control browsers, Finder, Terminal, VS Code, or other applications without explicit permission for that specific use.
+- Use non-GUI workspace tools for local files. If the appropriate tool is unavailable, explain the limitation instead of improvising with another application and ask for permission
+
+
 ## Network, browser, and search
 
 - You may use browser windows, web search, documentation lookup, package documentation, GitHub browsing, and other read-only network access when useful.
