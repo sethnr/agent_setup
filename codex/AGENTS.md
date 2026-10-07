@@ -43,3 +43,12 @@ Never perform these actions without explicit authorisation in the current conver
 - Add or update tests when behaviour changes.
 - Run the smallest relevant verification first; expand only if needed.
 - At the end, summarise what changed, what was checked, and anything not completed.
+
+
+## Google Drive, Docs, Sheets, and Slides
+
+- Do not take Google Drive file-management actions. Do not create, move, rename, share, unshare, change permissions, trash, restore, or delete any Google Drive file or folder.
+- For Google Drive files and folders generally, work through local mirrors/exports in the workspace.
+- For Google Sheets, Google Docs, or Google Slides that I explicitly introduce by URL, file ID, explicit name, or attachment in the current conversation, you may work with them normally as needed for the requested task.
+- Do not stray outside that authorized scope: do not inspect, modify, delete, clear, rename, restructure, or otherwise act on unrelated Google Drive files, folders, Sheets, Docs, or Slides.
+- Do not delete or trash any Google Sheet, tab, Doc, deck, Drive file, or Drive folder unless I explicitly authorize that exact destructive action in the current conversation.
